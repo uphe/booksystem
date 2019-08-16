@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.swing.JOptionPane;
+import javax.xml.bind.SchemaOutputResolver;
 
 import com.model.Book;
 import com.util.DbUtil;
@@ -68,16 +69,16 @@ public class BookDaoImpl implements BookDao {
 			String sql = "update book set book_id = book_id";
 			StringBuffer sb = new StringBuffer(sql);
 			if (StringUtil.isNotEmpty(book.getName())) {
-				sb.append(",book_name=" + book.getName());
+				sb.append(",book_name=" + "'"+book.getName()+"'");
 			}
 			if (StringUtil.isNotEmpty(book.getAuthor())) {
-				sb.append(",book_author=" + book.getAuthor());
+				sb.append(",book_author=" + "'"+book.getAuthor()+"'");
 			}
 			if (StringUtil.isNotEmpty(book.getType())) {
-				sb.append(",book_type=" + book.getType());
+				sb.append(",book_type=" + "'"+book.getType()+"'");
 			}
 			if (StringUtil.isNotEmpty(book.getPress())) {
-				sb.append(",book_press=" + book.getPress());
+				sb.append(",book_press=" + "'"+book.getPress()+"'");
 			}
 			if(book.getLend() == 0) {
 				sb.append(",book_lend=0");

@@ -37,14 +37,14 @@ public class UserDaoImpl implements UserDao {
 			String sql = "update user set user_id = user_id";
 			StringBuffer sb = new StringBuffer(sql);
 			if (StringUtil.isNotEmpty(user.getName())) {
-				sb.append(",user_name=" + user.getName());
+				sb.append(",user_name=" + "'"+user.getName()+"'");
 			} else if (StringUtil.isNotEmpty(user.getPassword())) {
-				sb.append(",user_password=" + user.getPassword());
+				sb.append(",user_password=" + "'"+user.getPassword()+"'");
 			} else if (user.getType() != -1) {
-				sb.append(",user_type="+user.getType());
+				sb.append(",user_type="+"'"+user.getType()+"'");
 			}
 
-			sb.append(" where user_id=" + user.getId());
+			sb.append(" where user_id=" + "'"+user.getId()+"'");
 			Connection con = new DbUtil().getCon();
 
 			PreparedStatement pstmt;

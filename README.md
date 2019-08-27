@@ -15,7 +15,7 @@ Super Administrators can modify the privileges of Administrators and ordinary us
 超级管理员可以修改管理员和普通用户的权限
 
 Every user we register defaults to ordinary users
-每一个用户注册时默认时普通用户
+每一个用户注册时默认是普通用户
 
 There is a super administrator account in our default database(id=123,password=123)
 我们默认数据库中存在一个超级管理员账户(id=123,password=123)

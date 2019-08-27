@@ -1,6 +1,6 @@
 # booksystem
 The booksystem hava three kinds of accounts
-该图书馆里系统有三种类型的账户
+该图书管理系统有三种类型的账户
 
 The first kind of account is Super Administrator and types in databases use 2
 第一种类型的账户是超级管理员，在数据库中的类型是2

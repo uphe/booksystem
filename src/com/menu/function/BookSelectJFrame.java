@@ -97,13 +97,17 @@ public class BookSelectJFrame extends JFrame {
 				Book book = new Book();
 				if (StringUtil.isNotEmpty(id)) {
 					book.setId(id);
-				} else if (StringUtil.isNotEmpty(name)) {
+				}
+				if (StringUtil.isNotEmpty(name)) {
 					book.setName(name);
-				} else if (StringUtil.isNotEmpty(author)) {
+				} 
+				if (StringUtil.isNotEmpty(author)) {
 					book.setAuthor(author);
-				} else if (StringUtil.isNotEmpty(type)) {
+				} 
+				if (StringUtil.isNotEmpty(type)) {
 					book.setType(type);
-				} else if (StringUtil.isNotEmpty(press)) {
+				} 
+				if (StringUtil.isNotEmpty(press)) {
 					book.setPress(press);
 				}
 				ResultSet rs = new BookDaoImpl().select(book);

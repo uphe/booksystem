@@ -68,6 +68,7 @@ public class BookDaoImpl implements BookDao {
 		if (BookUtil.bookSelect(book)) {
 			String sql = "update book set book_id = book_id";
 			StringBuffer sb = new StringBuffer(sql);
+			//这里之前用else if了
 			if (StringUtil.isNotEmpty(book.getName())) {
 				sb.append(",book_name=" + "'"+book.getName()+"'");
 			}
@@ -108,13 +109,17 @@ public class BookDaoImpl implements BookDao {
 		StringBuffer sb = new StringBuffer(sql);
 		if (StringUtil.isNotEmpty(book.getId())) {
 			sb.append(" and book_id like '%" + book.getId() + "%'");
-		} else if (StringUtil.isNotEmpty(book.getName())) {
+		}
+		if (StringUtil.isNotEmpty(book.getName())) {
 			sb.append(" and book_name like '%" + book.getName() + "%'");
-		} else if (StringUtil.isNotEmpty(book.getAuthor())) {
+		} 
+		if (StringUtil.isNotEmpty(book.getAuthor())) {
 			sb.append(" and book_author like '%" + book.getAuthor() + "%'");
-		} else if (StringUtil.isNotEmpty(book.getType())) {
+		} 
+		if (StringUtil.isNotEmpty(book.getType())) {
 			sb.append(" and book_type like '%" + book.getType() + "%'");
-		} else if (StringUtil.isNotEmpty(book.getPress())) {
+		}
+		if (StringUtil.isNotEmpty(book.getPress())) {
 			sb.append(" and book_press like '%" + book.getPress() + "%'");
 		}
 		Connection con = new DbUtil().getCon();

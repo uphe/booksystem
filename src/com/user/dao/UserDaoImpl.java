@@ -38,9 +38,11 @@ public class UserDaoImpl implements UserDao {
 			StringBuffer sb = new StringBuffer(sql);
 			if (StringUtil.isNotEmpty(user.getName())) {
 				sb.append(",user_name=" + "'"+user.getName()+"'");
-			} else if (StringUtil.isNotEmpty(user.getPassword())) {
+			} 
+			if (StringUtil.isNotEmpty(user.getPassword())) {
 				sb.append(",user_password=" + "'"+user.getPassword()+"'");
-			} else if (user.getType() != -1) {
+			} 
+			if (user.getType() != -1) {
 				sb.append(",user_type="+"'"+user.getType()+"'");
 			}
 
@@ -68,9 +70,11 @@ public class UserDaoImpl implements UserDao {
 		StringBuffer sb = new StringBuffer(sql);
 		if (StringUtil.isNotEmpty(user.getId())) {
 			sb.append(" and user_id like '%" + user.getId() + "%'");
-		} else if (StringUtil.isNotEmpty(user.getName())) {
+		}
+		if (StringUtil.isNotEmpty(user.getName())) {
 			sb.append(" and user_name like '%" + user.getName() + "%'");
-		} else if (user.getType() != -1) {
+		} 
+		if (user.getType() != -1) {
 			sb.append(" and user_type like '%" + user.getType() + "%'");
 		}
 		Connection con = new DbUtil().getCon();

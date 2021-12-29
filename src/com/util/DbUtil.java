@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DbUtil {
-	private String dbUrl = "jdbc:mysql://localhost:3306/booksystem?serverTimezone=UTC";
+	private String dbUrl = "jdbc:mysql://localhost:3306/book_system?serverTimezone=UTC";
 	private String dbUserName = "root";
 	private String dbPassword = "root";
 	private String jdbcName = "com.mysql.cj.jdbc.Driver";
